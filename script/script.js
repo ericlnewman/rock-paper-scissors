@@ -28,7 +28,7 @@ recall:
 function playRound(playerSelection, computerSelection){
     const p = playerSelection.toLowerCase();
     const c = computerSelection;
-    if(p === c){return "It's a tie!";}
+    if(p === c || c == undefined){return "It's a tie!";}
     else if(p === "rock" && c === "paper") {return "You Lose! Paper beats Rock";}
     else if(p === "rock" && c === "scissors") {return "You Win! Rock beats Scissors";}
     else if(p === "paper" && c === "scissors") {return "You Lose! Scissors beats Paper";}
