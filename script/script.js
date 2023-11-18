@@ -16,4 +16,29 @@ function getComputerChoice(){
     return Object.keys(obj).find(key => 
         obj[key] === number);
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
+/*
+function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection -
+and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
+recall:
+- rock beats scissors
+- paper beats rock
+- scissors beats paper
+*/
+function playRound(playerSelection, computerSelection){
+    const p = playerSelection.toLowerCase();
+    const c = computerSelection;
+    if(p === c){return "It's a tie!";}
+    else if(p === "rock" && c === "paper") {return "You Lose! Paper beats Rock";}
+    else if(p === "rock" && c === "scissors") {return "You Win! Rock beats Scissors";}
+    else if(p === "paper" && c === "scissors") {return "You Lose! Scissors beats Paper";}
+    else if(p === "paper" && c === "rock") {return "You Win! Paper beats Rock";}
+    else if(p === "scissors" && c === "rock") {return "You Lose! Rock beats Scissors";}
+    else if (p === "scissors" && c === "paper") {return "You Win! Scissors beats Paper";}
+
+}
+
+console.log(playRound("RoCK", getComputerChoice()));
+console.log(playRound("paPer", getComputerChoice()));
+console.log(playRound("Scissors", getComputerChoice()));
+console.log(playRound("sciSSORs", getComputerChoice()));
