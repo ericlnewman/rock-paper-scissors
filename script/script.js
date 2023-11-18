@@ -1,0 +1,1 @@
+/*JavaScript for Rock Paper Scissors Odin Project Assignment*/
