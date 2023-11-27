@@ -25,20 +25,31 @@ recall:
 - paper beats rock
 - scissors beats paper
 */
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection, tally){
     const p = playerSelection.toLowerCase();
     const c = computerSelection;
     if(p === c || c == undefined){return "It's a tie!";}
     else if(p === "rock" && c === "paper") {return "You Lose! Paper beats Rock";}
-    else if(p === "rock" && c === "scissors") {return "You Win! Rock beats Scissors";}
+    else if(p === "rock" && c === "scissors") {tally--; return "You Win! Rock beats Scissors";}
     else if(p === "paper" && c === "scissors") {return "You Lose! Scissors beats Paper";}
-    else if(p === "paper" && c === "rock") {return "You Win! Paper beats Rock";}
+    else if(p === "paper" && c === "rock") {tally--; return "You Win! Paper beats Rock";}
     else if(p === "scissors" && c === "rock") {return "You Lose! Rock beats Scissors";}
-    else if (p === "scissors" && c === "paper") {return "You Win! Scissors beats Paper";}
-
+    else if (p === "scissors" && c === "paper") {tally--; return "You Win! Scissors beats Paper";}
 }
-
+/*
 console.log(playRound("RoCK", getComputerChoice()));
 console.log(playRound("paPer", getComputerChoice()));
 console.log(playRound("Scissors", getComputerChoice()));
 console.log(playRound("sciSSORs", getComputerChoice()));
+*/
+function game(){
+    console.log("Welcome to Rock, Paper, Scissors! Play 5 rounds against the computer! Can you win?????");
+    let tally = 0;
+    for(let i = 0; i < 5; i++){
+        const userInput = prompt("Rock, paper or scissors, which do you choose?");
+        console.log(playRound(userInput, getComputerChoice(), tally));
+    }
+    if(tally < 3) return "You won!";
+    else return "You lost!";
+}
+console.log(game());
