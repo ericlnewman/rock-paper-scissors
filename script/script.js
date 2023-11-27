@@ -44,7 +44,7 @@ console.log(playRound("sciSSORs", getComputerChoice()));
 */
 function game(){
     console.log("Welcome to Rock, Paper, Scissors! Play 5 rounds against the computer! Can you win?????");
-    let tally = 0;
+    let tally = 5;
     for(let i = 0; i < 5; i++){
         const userInput = prompt("Rock, paper or scissors, which do you choose?");
         console.log(playRound(userInput, getComputerChoice(), tally));
